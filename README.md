@@ -26,7 +26,17 @@ java -jar xxx.jar
 ## Generate workload and observe the result
 
 ```
-cbt -project binguo-learning-centre -instance binguo-test read test-bin
+mysql> insert into test values(1111, "mike","kushimoto");
+mysql> commit;
+cbt -project learning-centre -instance test read test;
+
+mysql> update test set col2="Osaka" where id=111;
+mysql> commit;
+cbt -project learning-centre -instance test read test;
+
+mysql> delete from test where id=111;
+mysql> commit;
+cbt -project learning-centre -instance test read test;
 ```
 
 ## To Do list
