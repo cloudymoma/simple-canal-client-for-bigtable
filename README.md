@@ -1,4 +1,6 @@
-## provision src and target dbs
+# Simple canal client demo for Cloud Bigtable
+
+## Provision src and target dbs
 
 + Install MySQL if necessary
 Please refer to the [doc](https://medium.com/macoclock/installing-mysql-5-7-using-homebrew-974cc2d42509) to install MySQL by using homebrew.
@@ -18,7 +20,7 @@ cbt createfamily test cf1
 + Configure source MySQL instance: IP, user, password, etc.
 Please refer to the [doc](https://github.com/alibaba/canal/wiki/QuickStart)
 
-+ Start the canal
++ Start the `canal`
 Please refer to the [doc](https://github.com/alibaba/canal/wiki/QuickStart)
 
 ## Start the simple canal client for bigtable
@@ -30,7 +32,7 @@ mvn package assembly:single
 java -jar xxx.jar
 ```
 
-## Generate workload and observe the result
+## Generate workloads and observe the result
 
 ```
 mysql> insert into test values(1111, "mike","kushimoto");
