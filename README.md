@@ -1,23 +1,30 @@
-## Install and start canal
+## provision src and target dbs
 
-Please refer to the [doc](https://github.com/alibaba/canal/wiki/QuickStart)
++ Install MySQL if necessary
+Please refer to the [doc](https://medium.com/macoclock/installing-mysql-5-7-using-homebrew-974cc2d42509) to install MySQL by using homebrew.
 
-+ Configure source MySQL instance: IP, user, password, etc.
 + Create source table
 ```
 Create table test(id number, col1 char(30), col2 char(30));
 ```
-+ Start the canal
-
-## Start the simple canal client for bigtable
-
-+ Configure target Cloud Bigtable: projectId, instanceId, tableId, etc in the simple.conf file.
-+ create cloud bigtable table by using [cbt](https://cloud.google.com/bigtable/docs/cbt-reference)
++ Create cloud bigtable table by using [cbt](https://cloud.google.com/bigtable/docs/cbt-reference)
 ```
 cbt createtble test
 cbt createfamily test cf1
 ```
-+ start the simple canal client
+
+## Install and start canal
+
++ Configure source MySQL instance: IP, user, password, etc.
+Please refer to the [doc](https://github.com/alibaba/canal/wiki/QuickStart)
+
++ Start the canal
+Please refer to the [doc](https://github.com/alibaba/canal/wiki/QuickStart)
+
+## Start the simple canal client for bigtable
+
++ Configure target Cloud Bigtable: projectId, instanceId, tableId, etc in the simple.conf file.
++ Start the simple canal client
 ```
 mvn package assembly:single
 java -jar xxx.jar
